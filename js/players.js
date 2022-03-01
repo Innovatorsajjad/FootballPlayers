@@ -1,6 +1,5 @@
  //Detect search Button.........
  const SearchButton = () =>{
-console.log('clicked');
     const searchValue = document.getElementById("Search_Box").value;
     searchValue.value=""
     const url= `https://www.thesportsdb.com/api/v1/json/2/searchplayers.php?p=${searchValue}`
@@ -26,7 +25,7 @@ const DisplayPlayerDetails = (Players) =>{
            <p class="card-text">${player.strNationality}</p>
            <div class="buttons d-flex justify-content-around">
            <a href="#" class="btn btn-danger">Delete</a> 
-           <a href="#" class="btn btn-success onclick()="Details">Details</a>
+           <a href="#" class="btn btn-success" onclick="Details('${player.idPlayer}')">Details</a>
       </div>
     </div>
     </div>
@@ -34,5 +33,25 @@ const DisplayPlayerDetails = (Players) =>{
     parentDiv.appendChild(div);
  };
    };
+//button click addin..........\
 
+const Details = (info)=> {
+    const url=`https://www.thesportsdb.com/api/v1/json/2/lookupplayer.php?id=${info}`
+    fetch(url)
+    .then(Response=>Response.json())
+    .then(data =>LoadData(data.players[0]));
+}
+const LoadData = (info) => {
+ console.log(info);
+ const cardInfo = document.getElementById("Details_container").innerHTML=`
+ <div class="card w-75 ">
+  <div class="card-body">
+    <h5 class="card-title">${info.strPlayer}</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    
+  </div>
+</div>
+ `
+
+}
 

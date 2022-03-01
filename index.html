@@ -50,7 +50,7 @@
         <div class="searchBox ">
             <div class="parentInput d-flex w-50 mx-auto">
                 <input id="Search_Box" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-light" onclick="SearchButton()" type="submit">Search</button>
+                <button href="#viewItems" class="btn btn-outline-light" onclick="SearchButton()" type="submit">Search</button>
               </div>
         </div>
         </div>
@@ -59,13 +59,17 @@
          <!-- Svg -->
          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#5000ca" fill-opacity="1" d="M0,288L1440,32L1440,0L0,0Z"></path></svg>
 
+          <!-- card Show side -->
 
-
-         <div class="all_info">
+         <div class="all_info" id="viewItems">
           <div class="player_container container row mx-auto" id="player_container">
           
             </div>
            </div>
+
+
+           <!-- card_info show side -->
+           <div style="position: absolute; top:615px;left: 550px;" id="Details_container" class="card_info mx-auto"></div>
 
 
 
