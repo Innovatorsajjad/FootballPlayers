@@ -12,3 +12,9 @@
     background-color: #5000ca;
     padding-bottom: 150px;
 }
+#spinner{
+    display: none;
+    position: absolute; 
+    top:615px;
+    left: 550px;
+}
